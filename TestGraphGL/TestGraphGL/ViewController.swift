@@ -14,27 +14,38 @@ let apollo = ApolloClient(url: URL(string: "http://localhost:8080/graphql")!)
 
 class ViewController: UIViewController {
 
-    var watcher: GraphQLQueryWatcher<AllPostsQuery>?
+    var watcher: GraphQLQueryWatcher<MyPostQuery>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         NSLog("view did load")
-//        apollo.cacheKeyForObject = { $0["id"] }
+        
         
         
         //swift from demo  :  https://github.com/apollographql/frontpage-ios-app
-//        watcher = apollo.watch(query: AllPostsQuery()) { (result, error) in
-//            if let error = error {
-//                NSLog("Error while fetching query: \(error.localizedDescription)")
-//                return
-//            }
-//            NSLog("\(result?.data?.posts)")
-//        }
+        /*
+         
+
+        watcher = apollo.watch(query: MyPostQuery()) { (result, error) in
+            if let error = error {
+                NSLog("Error while fetching query: \(error.localizedDescription)")
+                return
+            }
+            NSLog("\(result?.data?.posts)")
+        }
+        
+        */
+        
         
         //Objective C by myself
+        
+        ///*
+        
         let myGraphglInstance = MyGraphGL()
         myGraphglInstance.commandGetInfo()
+ 
+        //*/
     }
 
     override func didReceiveMemoryWarning() {
